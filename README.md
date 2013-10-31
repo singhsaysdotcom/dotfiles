@@ -5,6 +5,9 @@
     git clone https://github.com/singhsaysdotcom/dotfiles ~/dotfiles
     ~/dotfiles/scripts/setup.sh
 
+    vim
+    Esc:BundleInstall
+
 ##.vim setup
 
   + add new submodules with

@@ -19,6 +19,8 @@ function install_packages {
 # Clone dotfiles repo.
 function clone_dotfiles {
   git clone git@github.com:singhsaysdotcom/dotfiles.git $HOME/dotfiles
+  cd $HOME/dotfiles
+  git submodule init && git submodule update
 }
 
 
@@ -37,6 +39,8 @@ function install_fonts {
     mkdir -p "$HOME/.fonts"
   fi
   unzip -qq -od "$HOME/.fonts" "$TMPDIR/fonts.zip" 2>/dev/null
+  mkdir -p "$HOME/.config/fontconfig/conf.d"
+  ln -sf "$HOME/dotfiles/10-powerline-symbols.conf" "$HOME/.config/fontconfig/conf.d/10-powerline-symbols.conf"
   fc-cache -f "$HOME/.fonts"
 }
 
@@ -47,4 +51,6 @@ function cleanup {
 
 install_packages
 install_fonts
+clone_dotfiles
+setup_symlinks
 cleanup
