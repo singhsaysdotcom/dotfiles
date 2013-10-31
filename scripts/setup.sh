@@ -13,7 +13,6 @@ while true; do sudo -n true; sleep 10; kill -0 "$$" || exit; done 2>/dev/null &
 function install_packages {
   sudo apt-get -qq update
   sudo apt-get -qq install vim git
-  [[ "$?" -eq 0 ]] && logok || logerr
 }
 
 
@@ -44,7 +43,6 @@ function install_fonts {
 
 function cleanup {
   rm -Rf "$TMPDIR"
-  [[ "$?" -eq 0 ]] && logok || logerr
 }
 
 install_packages
