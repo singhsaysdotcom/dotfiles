@@ -67,7 +67,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'curist/vim-angular-template'
 Bundle 'groenewege/vim-less'
 Bundle 'elzr/vim-json'
-
+Bundle 'avakhov/vim-yaml'
 
 filetype plugin indent on
 
