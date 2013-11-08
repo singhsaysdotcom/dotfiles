@@ -43,6 +43,7 @@ zle -N insert-space insert_space
 bindkey "^[ " insert-space
 
 export PATH=$PATH:$HOME/bin:$HOME/.rvm/bin
+export XBMC_HOME=/usr/share/XBMC
 
 ## Google Specific
 if [[ "$HOST" =~ "corp.google.com" && -e "$HOME/.zshrc.google" ]]; then
